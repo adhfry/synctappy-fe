@@ -37,8 +37,8 @@ export const privacyId: LegalDocument = {
         { type: 'contact', rows: [
           { label: 'Nama', value: 'Synvora Teknologi Indonesia' },
           { label: 'Produk', value: 'Synctappy' },
-          { label: 'Email Privasi', value: 'privacy@synctappy.id' },
-          { label: 'Email Dukungan', value: 'support@synctappy.id' },
+          { label: 'Email Privasi', value: 'privacy@synctappy.biz.id' },
+          { label: 'Email Dukungan', value: 'support@synctappy.biz.id' },
           { label: 'Alamat', value: 'Akan dicantumkan sebelum peluncuran' },
         ] },
         { type: 'p', text: 'Apabila Synctappy memproses Data Pribadi atas nama pelanggan bisnis berdasarkan instruksi pelanggan tersebut, hubungan dan tanggung jawab para pihak dapat diatur lebih lanjut melalui perjanjian atau ketentuan layanan yang berlaku. UU PDP membedakan antara Pengendali Data Pribadi dan Prosesor Data Pribadi berdasarkan pihak yang menentukan tujuan dan kendali pemrosesan.' },
@@ -211,7 +211,7 @@ export const privacyId: LegalDocument = {
       id: 'permintaan',
       title: '20. Cara Mengajukan Permintaan',
       blocks: [
-        { type: 'p', text: 'Untuk mengajukan permintaan terkait Data Pribadi, hubungi privacy@synctappy.id dengan subjek email:' },
+        { type: 'p', text: 'Untuk mengajukan permintaan terkait Data Pribadi, hubungi privacy@synctappy.biz.id dengan subjek email:' },
         { type: 'quote', text: 'Permintaan Data Pribadi – Synctappy' },
         { type: 'p', text: 'Permintaan dapat mencakup akses data, koreksi, penghapusan, penarikan persetujuan, pembatasan pemrosesan, atau pertanyaan mengenai pemrosesan Data Pribadi. Kami dapat meminta informasi tambahan untuk memverifikasi identitas pemohon sebelum memenuhi permintaan, agar Data Pribadi tidak diberikan kepada pihak yang tidak berwenang.' },
       ],
@@ -283,8 +283,8 @@ export const privacyId: LegalDocument = {
         { type: 'contact', rows: [
           { label: 'Perusahaan', value: 'Synvora Teknologi Indonesia' },
           { label: 'Produk', value: 'Synctappy' },
-          { label: 'Privasi', value: 'privacy@synctappy.id' },
-          { label: 'Dukungan', value: 'support@synctappy.id' },
+          { label: 'Privasi', value: 'privacy@synctappy.biz.id' },
+          { label: 'Dukungan', value: 'support@synctappy.biz.id' },
           { label: 'Alamat', value: 'Akan dicantumkan sebelum peluncuran' },
         ] },
       ],

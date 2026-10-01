@@ -21,7 +21,7 @@ The site is bilingual (EN / ID) and follows the device language; see the languag
 * Positioning: *Smart Touchpoint Platform*. Tagline: **Tap. Connect. Grow.**
 * Core concept: TAP / SCAN → DIGITAL EXPERIENCE → ACTION → ANALYTICS.
 * Demo business used in all visuals: **KopiKu Coffee & Eatery** (matches the supplied photos). Always label it demo.
-* Short link format shown in UI: `go.synctappy.id/<slug>`.
+* Short link format shown in UI: `go.synctappy.biz.id/<slug>`.
 
 ### Logo (`public/brand/`): OFFICIAL FILES FROM SYNVORA
 

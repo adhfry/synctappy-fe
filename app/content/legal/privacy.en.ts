@@ -37,8 +37,8 @@ export const privacyEn: LegalDocument = {
         { type: 'contact', rows: [
           { label: 'Name', value: 'Synvora Teknologi Indonesia' },
           { label: 'Product', value: 'Synctappy' },
-          { label: 'Privacy email', value: 'privacy@synctappy.id' },
-          { label: 'Support email', value: 'support@synctappy.id' },
+          { label: 'Privacy email', value: 'privacy@synctappy.biz.id' },
+          { label: 'Support email', value: 'support@synctappy.biz.id' },
           { label: 'Address', value: 'To be published before launch' },
         ] },
         { type: 'p', text: 'Where Synctappy processes Personal Data on behalf of a business customer and on its instructions, the parties’ relationship and responsibilities may be set out further in an agreement or the applicable terms of service. The PDP Law distinguishes between a Personal Data Controller and a Personal Data Processor based on who determines the purposes and control of processing.' },
@@ -211,7 +211,7 @@ export const privacyEn: LegalDocument = {
       id: 'permintaan',
       title: '20. How to Submit a Request',
       blocks: [
-        { type: 'p', text: 'To submit a request about your Personal Data, contact privacy@synctappy.id with the email subject:' },
+        { type: 'p', text: 'To submit a request about your Personal Data, contact privacy@synctappy.biz.id with the email subject:' },
         { type: 'quote', text: 'Personal Data Request – Synctappy' },
         { type: 'p', text: 'Requests may cover data access, correction, deletion, withdrawal of consent, restriction of processing, or questions about how your Personal Data is processed. We may ask for additional information to verify the requester’s identity before fulfilling a request, so that Personal Data is not disclosed to unauthorized parties.' },
       ],
@@ -283,8 +283,8 @@ export const privacyEn: LegalDocument = {
         { type: 'contact', rows: [
           { label: 'Company', value: 'Synvora Teknologi Indonesia' },
           { label: 'Product', value: 'Synctappy' },
-          { label: 'Privacy', value: 'privacy@synctappy.id' },
-          { label: 'Support', value: 'support@synctappy.id' },
+          { label: 'Privacy', value: 'privacy@synctappy.biz.id' },
+          { label: 'Support', value: 'support@synctappy.biz.id' },
           { label: 'Address', value: 'To be published before launch' },
         ] },
       ],

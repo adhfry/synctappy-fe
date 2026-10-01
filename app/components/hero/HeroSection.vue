@@ -106,7 +106,7 @@ useHead({
         <div class="absolute -bottom-6 right-4 hidden items-center gap-3 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-[var(--shadow-lift)] backdrop-blur-md sm:flex md:right-8">
           <UiBrandIcon name="google" class="size-7" />
           <span class="text-xs leading-tight">
-            <span class="block font-semibold text-ink-400">go.synctappy.id/kopiku</span>
+            <span class="block font-semibold text-ink-400">go.synctappy.biz.id/kopiku</span>
             <span class="block font-bold text-ink-900">{{ t.hero.reviewCallout }}</span>
           </span>
         </div>

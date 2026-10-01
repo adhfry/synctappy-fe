@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
                 <p class="flex items-center justify-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-cyan-400">
                   <Lock class="size-3" aria-hidden="true" /> {{ t.dynamic.staysSame }}
                 </p>
-                <p class="mt-1.5 font-mono text-xs text-white/80">go.synctappy.id/kopiku</p>
+                <p class="mt-1.5 font-mono text-xs text-white/80">go.synctappy.biz.id/kopiku</p>
               </div>
             </div>
 

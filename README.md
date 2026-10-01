@@ -33,7 +33,7 @@ Requires Node 20+. Optional environment variables (see `.env.example`):
 
 | Variable | Purpose | Default |
 |---|---|---|
-| `NUXT_PUBLIC_SITE_URL` | canonical + Open Graph base URL | `https://synctappy.id` (**placeholder**) |
+| `NUXT_PUBLIC_SITE_URL` | canonical + Open Graph base URL | `https://synctappy.biz.id` (production) |
 | `NUXT_PUBLIC_CONTACT_HREF` | "Talk to Synvora" link (mailto:, wa.me, form URL) | empty, so the button is hidden |
 
 ## Asset pipelines

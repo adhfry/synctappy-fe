@@ -15,7 +15,7 @@ const { t } = useLocale()
         </div>
         <div>
           <p class="font-display text-sm font-semibold tracking-wide">{{ t.cardMockup.tapToConnect }}</p>
-          <p class="text-[10px] text-white/60">go.synctappy.id/you</p>
+          <p class="text-[10px] text-white/60">go.synctappy.biz.id/you</p>
         </div>
       </div>
     </div>

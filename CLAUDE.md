@@ -20,16 +20,16 @@ Marketing landing page for **Synctappy by Synvora**, a smart touchpoint platform
 
 **Known / open items:**
 - Production is live at **https://synctappy.biz.id** (VPS, PM2 `synctappy-fe`, see DEPLOYMENT.md). Deploy = `git push` then `ssh produli-server 'sudo bash /var/www/synctappy.biz.id/scripts/deploy.sh'`. The GitHub repo is PUBLIC: never commit secrets or internal docs.
-- UI mockups still show the demo short link `go.synctappy.id`; the real short-link host will be `go.synctappy.biz.id` (DNS reserved). Privacy Policy emails `@synctappy.id` are still placeholders.
+- All UI mockups and the Privacy Policy use the real domain: short links `go.synctappy.biz.id/<slug>` (DNS reserved for the future link engine) and emails `privacy@` / `support@synctappy.biz.id`. **These mailboxes must actually be created** before launch. (The supplied hero photo still shows `go.synctappy.id` printed on the phone screen; that's part of the image.)
 - `NUXT_PUBLIC_CONTACT_HREF` is empty, so the "Talk to Synvora" button inside the dialog stays hidden. Needs an official contact channel.
 - Final pricing is not validated. Keep "Coming soon" until the business confirms numbers.
-- Privacy Policy is a **DRAFT pending legal review**: effective date, company address and the `@synctappy.id` emails are placeholders (shown as text, not links). Finalize together with the real third parties, retention periods and controller/processor model.
+- Privacy Policy is a **DRAFT pending legal review**: effective date and company address are placeholders; emails are shown as plain text (not links) until the mailboxes exist. Finalize together with the real third parties, retention periods and controller/processor model.
 - Terms of Service page doesn't exist yet (the footer shows "(soon)").
 - If analytics/marketing scripts are ever added: add a consent category in `useConsent`, load the script only after consent, and update Privacy Policy §10 + the cookie table in both languages.
 - 4 cosmetic PostCSS warnings at build ("Gradient has outdated direction syntax"). It's a prefixer false positive and harmless.
 - Google Fonts load from the CDN. Consider `@nuxt/fonts` for self-hosting.
 
-**Next phase (not started):** Laravel 11/12 API (Sanctum auth, workspaces, devices, dynamic link engine `go.synctappy.id/{workspace}/{slug}`, analytics events, campaigns, billing). See blueprint §3–§22.
+**Next phase (not started):** Laravel 11/12 API (Sanctum auth, workspaces, devices, dynamic link engine `go.synctappy.biz.id/{workspace}/{slug}`, analytics events, campaigns, billing). See blueprint §3–§22.
 Privacy requirements from the product owner for that phase: a **Privacy Center** in dashboard Settings (Privacy Policy, Cookie Preferences, Download My Data, Request Correction, Request Deletion, Withdraw Consent) and an onboarding consent checkbox ("I have read and agree to the Terms of Service and Privacy Policy") whose consent is **recorded** (UU PDP).
 
 ## Commands
