@@ -93,20 +93,21 @@ useHead({
         </div>
 
         <!-- callouts -->
-        <div class="absolute -top-5 left-4 flex animate-float items-center gap-3 rounded-2xl border border-white/70 bg-white/90 px-4 py-3 shadow-[var(--shadow-lift)] backdrop-blur-md sm:left-8 md:-top-7">
-          <span class="grid size-9 place-items-center rounded-xl bg-brand-gradient text-white">
-            <Nfc class="size-[18px]" aria-hidden="true" />
+        <!-- callouts: compact on phones (< sm), full size from sm up -->
+        <div class="absolute -top-3.5 left-3 flex animate-float items-center gap-2 rounded-xl border border-white/70 bg-white/90 px-2.5 py-1.5 shadow-[var(--shadow-lift)] backdrop-blur-md sm:-top-5 sm:left-8 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3 md:-top-7">
+          <span class="grid size-6 place-items-center rounded-lg bg-brand-gradient text-white sm:size-9 sm:rounded-xl">
+            <Nfc class="size-3.5 sm:size-[18px]" aria-hidden="true" />
           </span>
-          <span class="text-xs leading-tight">
+          <span class="text-[10px] leading-tight sm:text-xs">
             <span class="block font-bold text-ink-900">{{ t.hero.tapTitle }}</span>
             <span class="block text-ink-500">{{ t.hero.tapSubtitle }}</span>
           </span>
         </div>
 
-        <div class="absolute -bottom-6 right-4 hidden items-center gap-3 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-[var(--shadow-lift)] backdrop-blur-md sm:flex md:right-8">
-          <UiBrandIcon name="google" class="size-7" />
-          <span class="text-xs leading-tight">
-            <span class="block font-semibold text-ink-400">go.synctappy.biz.id/kopiku</span>
+        <div class="absolute -bottom-4 right-3 flex items-center gap-2 rounded-xl border border-white/70 bg-white/95 px-2.5 py-1.5 shadow-[var(--shadow-lift)] backdrop-blur-md sm:-bottom-6 sm:right-4 sm:gap-3 sm:rounded-2xl sm:px-4 sm:py-3 md:right-8">
+          <UiBrandIcon name="google" class="size-5 sm:size-7" />
+          <span class="text-[10px] leading-tight sm:text-xs">
+            <span class="block text-[9px] font-semibold text-ink-400 sm:text-xs">go.synctappy.biz.id/kopiku</span>
             <span class="block font-bold text-ink-900">{{ t.hero.reviewCallout }}</span>
           </span>
         </div>
