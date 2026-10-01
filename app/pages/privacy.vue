@@ -7,7 +7,7 @@ const doc = computed(() => (locale.value === 'id' ? privacyId : privacyEn))
 
 usePageSeo({
   path: '/privacy',
-  title: () => `${doc.value.title} — Synctappy`,
+  title: () => `${doc.value.title} | Synctappy`,
   description: () => t.value.legal.privacyDescription,
   breadcrumb: () => [{ name: doc.value.title, path: '/privacy' }],
 })

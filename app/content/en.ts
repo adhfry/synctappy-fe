@@ -10,15 +10,15 @@ import type { LandingContent } from '~/types/content'
  */
 export const en: LandingContent = {
   meta: {
-    title: 'Synctappy — Smart Touchpoint Platform',
-    description: 'Synctappy turns every NFC tap and QR scan into a digital experience — Google reviews, multi-link profiles, dynamic links, campaigns and analytics.',
+    title: 'Synctappy | Smart Touchpoint Platform',
+    description: 'Synctappy turns every NFC tap and QR scan into a digital experience with Google reviews, multi-link profiles, dynamic links, campaigns and analytics.',
     ogLocale: 'en_US',
-    imageAlt: 'Synctappy by Synvora — a KopiKu acrylic NFC/QR stand next to a phone showing the smart profile, with the headline “Turn Every Touch Into a Digital Experience.”',
+    imageAlt: 'Synctappy by Synvora: a KopiKu acrylic NFC/QR stand next to a phone showing the smart profile, with the headline “Turn Every Touch Into a Digital Experience.”',
     features: [
       'NFC and QR touchpoints (stand, card, tag)',
       'Google Review shortcut',
       'Multi-link smart profile',
-      'Dynamic links — change the destination without reprinting',
+      'Dynamic links: change the destination without reprinting',
       'Campaigns and promotions',
       'Tap, scan and click analytics per touchpoint',
     ],
@@ -33,7 +33,7 @@ export const en: LandingContent = {
       { label: 'Pricing', href: '#pricing' },
     ],
     main: 'Main',
-    backToTop: 'Synctappy — back to top',
+    backToTop: 'Synctappy, back to top',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
   },
@@ -61,7 +61,7 @@ export const en: LandingContent = {
     eyebrow: 'Smart Touchpoint Platform',
     titleLead: 'Turn Every Touch Into a',
     titleHighlight: 'Digital Experience.',
-    subtitle: 'Connect your customers to reviews, links, profiles, promotions, and more — with a simple tap or scan.',
+    subtitle: 'Connect your customers to reviews, links, profiles, promotions, and more with a simple tap or scan.',
     ctaPrimary: 'Try Synctappy Free',
     ctaSecondary: 'See How It Works',
     highlights: [
@@ -80,7 +80,7 @@ export const en: LandingContent = {
     eyebrow: 'The problem',
     title: 'Your customers are already willing to connect.',
     highlight: 'Make it easier.',
-    description: 'Most customers are happy to review, follow or come back. What stops them is friction — and what stops you is not knowing where they drop off.',
+    description: 'Most customers are happy to review, follow or come back. What stops them is friction. What stops you is not knowing where they drop off.',
     items: [
       'Customers won’t type long links or search for your page',
       'Happy customers leave without ever finding your review page',
@@ -99,7 +99,7 @@ export const en: LandingContent = {
     eyebrow: 'The solution',
     title: 'One Touchpoint.',
     highlight: 'Endless Possibilities.',
-    description: 'Synctappy connects a physical touchpoint to a digital experience you control — and turns every interaction into an action you can measure.',
+    description: 'Synctappy connects a physical touchpoint to a digital experience you control, and turns every interaction into an action you can measure.',
     touchpoint: 'Your touchpoint',
     tapScan: 'Tap / Scan',
     takeAction: 'Take action',
@@ -116,7 +116,7 @@ export const en: LandingContent = {
     eyebrow: 'How it works',
     title: 'Simple for customers.',
     highlight: 'Powerful for you.',
-    description: 'From a physical tap to a measurable result in four steps — no app for your customers to install.',
+    description: 'From a physical tap to a measurable result in four steps. Your customers don’t need to install an app.',
     steps: [
       { number: '01', icon: 'nfc', title: 'Tap / Scan', description: 'Customers tap their phone on the NFC chip or scan the QR code. No app needed.' },
       { number: '02', icon: 'smartphone', title: 'Connect', description: 'Synctappy instantly opens your destination or smart profile in the browser.' },
@@ -129,13 +129,13 @@ export const en: LandingContent = {
     eyebrow: 'Google Review',
     title: 'Turn Happy Customers Into Your',
     highlight: 'Next Review.',
-    description: 'The moment a customer is happiest is usually at your counter. Synctappy puts your Google review page one tap away — right then.',
+    description: 'The moment a customer is happiest is usually at your counter. Synctappy puts your Google review page one tap away, right at that moment.',
     points: [
-      'Opens your Google review page directly — no searching, no typing',
+      'Opens your Google review page directly, no searching or typing',
       'Works with NFC tap and QR scan on any modern smartphone',
       'Track how many customers reach your review page',
     ],
-    compliance: 'Synctappy makes reviews easier to reach — it never filters, rewards or scripts them. Every customer is free to share their honest experience, in line with Google’s review policies.',
+    compliance: 'Synctappy makes reviews easier to reach. It never filters, rewards or scripts them. Every customer is free to share their honest experience, in line with Google’s review policies.',
     tapScan: 'Tap / Scan',
     phoneLabel: 'Google review page opened from a Synctappy stand',
     googleReviews: 'Google Reviews',
@@ -158,7 +158,7 @@ export const en: LandingContent = {
     eyebrow: 'Smart Profile',
     title: 'Your business,',
     highlight: 'beautifully in one page.',
-    description: 'A mobile-first business profile that loads instantly after every tap — branded, organized and always up to date.',
+    description: 'A mobile-first business profile that loads instantly after every tap: branded, organized and always up to date.',
     anatomy: [
       { icon: 'building', title: 'Brand header', description: 'Logo, cover and a short description.' },
       { icon: 'click', title: 'Primary CTA', description: 'The one action that matters most today.' },
@@ -174,7 +174,7 @@ export const en: LandingContent = {
     eyebrow: 'Dynamic Link',
     title: 'Change the Destination.',
     highlight: 'Keep the Touchpoint.',
-    description: 'Your NFC chip and QR code point to a Synctappy link, not a fixed URL. Update where it goes from the dashboard — no reprinting, no new hardware.',
+    description: 'Your NFC chip and QR code point to a Synctappy link, not a fixed URL. Update where it goes from the dashboard. No reprinting, no new hardware.',
     staysSame: 'Stays the same',
     destination: 'Destination',
     chooseLabel: 'Choose a destination',
@@ -191,7 +191,7 @@ export const en: LandingContent = {
     eyebrow: 'Analytics',
     title: 'See what happens',
     highlight: 'after every tap.',
-    description: 'Know which touchpoints work, which destinations customers choose and when they engage — per device and per location.',
+    description: 'Know which touchpoints work, which destinations customers choose and when they engage, per device and per location.',
     capabilities: [
       'Taps and scans per touchpoint',
       'Clicks per destination and link performance',
@@ -287,7 +287,7 @@ export const en: LandingContent = {
     highlight: 'A touchpoint platform.',
     benefits: [
       { icon: 'hand', title: 'Simple', description: 'Tap or scan. No app, no typing, no searching.' },
-      { icon: 'route', title: 'Flexible', description: 'One touchpoint, multiple destinations — changeable any time.' },
+      { icon: 'route', title: 'Flexible', description: 'One touchpoint, multiple destinations, changeable any time.' },
       { icon: 'chart-line', title: 'Measurable', description: 'See what customers actually do after every tap.' },
       { icon: 'layers', title: 'Scalable', description: 'Grow from one table to many locations and devices.' },
     ],
@@ -361,7 +361,7 @@ export const en: LandingContent = {
     signin: {
       eyebrow: 'Dashboard',
       title: 'Sign in opens at launch.',
-      body: 'The Synctappy dashboard — devices, destinations, campaigns and analytics — becomes available together with the free trial.',
+      body: 'The Synctappy dashboard (devices, destinations, campaigns and analytics) becomes available together with the free trial.',
     },
     contact: {
       eyebrow: 'Talk to Synvora',

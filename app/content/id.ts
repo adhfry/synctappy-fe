@@ -8,15 +8,15 @@ import type { LandingContent } from '~/types/content'
  */
 export const id: LandingContent = {
   meta: {
-    title: 'Synctappy — Platform Smart Touchpoint',
-    description: 'Synctappy mengubah setiap tap NFC dan scan QR menjadi pengalaman digital — Google Review, profil multi-link, dynamic link, campaign, dan analytics.',
+    title: 'Synctappy | Platform Smart Touchpoint',
+    description: 'Synctappy mengubah setiap tap NFC dan scan QR menjadi pengalaman digital lewat Google Review, profil multi-link, dynamic link, campaign, dan analytics.',
     ogLocale: 'id_ID',
-    imageAlt: 'Synctappy by Synvora — stand akrilik NFC/QR KopiKu di samping ponsel yang menampilkan smart profile, dengan judul “Ubah Setiap Sentuhan Menjadi Pengalaman Digital.”',
+    imageAlt: 'Synctappy by Synvora: stand akrilik NFC/QR KopiKu di samping ponsel yang menampilkan smart profile, dengan judul “Ubah Setiap Sentuhan Menjadi Pengalaman Digital.”',
     features: [
       'Touchpoint NFC dan QR (stand, kartu, tag)',
       'Pintasan Google Review',
       'Smart profile multi-link',
-      'Dynamic link — ganti tujuan tanpa cetak ulang',
+      'Dynamic link: ganti tujuan tanpa cetak ulang',
       'Campaign dan promo',
       'Analytics tap, scan, dan klik per touchpoint',
     ],
@@ -31,7 +31,7 @@ export const id: LandingContent = {
       { label: 'Harga', href: '#pricing' },
     ],
     main: 'Utama',
-    backToTop: 'Synctappy — kembali ke atas',
+    backToTop: 'Synctappy, kembali ke atas',
     openMenu: 'Buka menu',
     closeMenu: 'Tutup menu',
   },
@@ -59,7 +59,7 @@ export const id: LandingContent = {
     eyebrow: 'Platform Smart Touchpoint',
     titleLead: 'Ubah Setiap Sentuhan Menjadi',
     titleHighlight: 'Pengalaman Digital.',
-    subtitle: 'Hubungkan pelanggan ke review, link, profil, promo, dan banyak lagi — cukup dengan satu tap atau scan.',
+    subtitle: 'Hubungkan pelanggan ke review, link, profil, promo, dan banyak lagi, cukup dengan satu tap atau scan.',
     ctaPrimary: 'Coba Synctappy Gratis',
     ctaSecondary: 'Lihat Cara Kerja',
     highlights: [
@@ -78,7 +78,7 @@ export const id: LandingContent = {
     eyebrow: 'Masalahnya',
     title: 'Pelanggan Anda sebenarnya ingin terhubung.',
     highlight: 'Permudah jalannya.',
-    description: 'Sebagian besar pelanggan senang memberi review, mengikuti, atau kembali lagi. Yang menghalangi mereka adalah hambatan — dan yang menghalangi Anda adalah tidak tahu di mana mereka berhenti.',
+    description: 'Sebagian besar pelanggan senang memberi review, mengikuti, atau kembali lagi. Yang menghalangi mereka adalah hambatan. Yang menghalangi Anda adalah tidak tahu di mana mereka berhenti.',
     items: [
       'Pelanggan malas mengetik link panjang atau mencari halaman Anda',
       'Pelanggan puas pulang tanpa pernah menemukan halaman review Anda',
@@ -97,7 +97,7 @@ export const id: LandingContent = {
     eyebrow: 'Solusinya',
     title: 'Satu Touchpoint.',
     highlight: 'Banyak Kemungkinan.',
-    description: 'Synctappy menghubungkan touchpoint fisik dengan pengalaman digital yang Anda kendalikan — dan mengubah setiap interaksi menjadi aksi yang bisa diukur.',
+    description: 'Synctappy menghubungkan touchpoint fisik dengan pengalaman digital yang Anda kendalikan, lalu mengubah setiap interaksi menjadi aksi yang bisa diukur.',
     touchpoint: 'Touchpoint Anda',
     tapScan: 'Tap / Scan',
     takeAction: 'Ambil aksi',
@@ -114,7 +114,7 @@ export const id: LandingContent = {
     eyebrow: 'Cara kerja',
     title: 'Sederhana untuk pelanggan.',
     highlight: 'Bertenaga untuk Anda.',
-    description: 'Dari satu tap fisik menjadi hasil yang terukur dalam empat langkah — pelanggan tidak perlu memasang aplikasi.',
+    description: 'Dari satu tap fisik menjadi hasil yang terukur dalam empat langkah. Pelanggan tidak perlu memasang aplikasi.',
     steps: [
       { number: '01', icon: 'nfc', title: 'Tap / Scan', description: 'Pelanggan menempelkan ponsel ke chip NFC atau memindai QR Code. Tanpa aplikasi.' },
       { number: '02', icon: 'smartphone', title: 'Terhubung', description: 'Synctappy langsung membuka tujuan atau smart profile Anda di browser.' },
@@ -127,13 +127,13 @@ export const id: LandingContent = {
     eyebrow: 'Google Review',
     title: 'Ubah Pelanggan Puas Menjadi',
     highlight: 'Review Berikutnya.',
-    description: 'Momen paling bahagia pelanggan biasanya terjadi di meja kasir Anda. Synctappy menghadirkan halaman review Google hanya satu tap — tepat di saat itu.',
+    description: 'Momen paling bahagia pelanggan biasanya terjadi di meja kasir Anda. Synctappy menghadirkan halaman review Google hanya satu tap, tepat di saat itu.',
     points: [
-      'Langsung membuka halaman review Google Anda — tanpa mencari, tanpa mengetik',
+      'Langsung membuka halaman review Google Anda, tanpa mencari dan mengetik',
       'Bekerja dengan tap NFC dan scan QR di semua smartphone modern',
       'Pantau berapa banyak pelanggan yang membuka halaman review Anda',
     ],
-    compliance: 'Synctappy mempermudah akses ke halaman review — tidak pernah menyaring, memberi imbalan, atau mengarahkan isi review. Setiap pelanggan bebas membagikan pengalaman jujurnya, sesuai kebijakan review Google.',
+    compliance: 'Synctappy mempermudah akses ke halaman review. Kami tidak pernah menyaring, memberi imbalan, atau mengarahkan isi review. Setiap pelanggan bebas membagikan pengalaman jujurnya, sesuai kebijakan review Google.',
     tapScan: 'Tap / Scan',
     phoneLabel: 'Halaman review Google terbuka dari stand Synctappy',
     googleReviews: 'Ulasan Google',
@@ -156,7 +156,7 @@ export const id: LandingContent = {
     eyebrow: 'Smart Profile',
     title: 'Bisnis Anda,',
     highlight: 'indah dalam satu halaman.',
-    description: 'Profil bisnis mobile-first yang langsung terbuka setelah setiap tap — sesuai brand, tertata, dan selalu terbaru.',
+    description: 'Profil bisnis mobile-first yang langsung terbuka setelah setiap tap: sesuai brand, tertata, dan selalu terbaru.',
     anatomy: [
       { icon: 'building', title: 'Header brand', description: 'Logo, cover, dan deskripsi singkat.' },
       { icon: 'click', title: 'CTA utama', description: 'Satu aksi yang paling penting hari ini.' },
@@ -172,7 +172,7 @@ export const id: LandingContent = {
     eyebrow: 'Dynamic Link',
     title: 'Ganti Tujuannya.',
     highlight: 'Touchpoint Tetap Sama.',
-    description: 'Chip NFC dan QR Code Anda mengarah ke link Synctappy, bukan URL tetap. Ubah tujuannya dari dashboard — tanpa cetak ulang, tanpa perangkat baru.',
+    description: 'Chip NFC dan QR Code Anda mengarah ke link Synctappy, bukan URL tetap. Ubah tujuannya dari dashboard, tanpa cetak ulang dan tanpa perangkat baru.',
     staysSame: 'Tetap sama',
     destination: 'Tujuan',
     chooseLabel: 'Pilih tujuan',
@@ -189,7 +189,7 @@ export const id: LandingContent = {
     eyebrow: 'Analytics',
     title: 'Lihat apa yang terjadi',
     highlight: 'setelah setiap tap.',
-    description: 'Ketahui touchpoint mana yang efektif, tujuan mana yang dipilih pelanggan, dan kapan mereka berinteraksi — per perangkat dan per lokasi.',
+    description: 'Ketahui touchpoint mana yang efektif, tujuan mana yang dipilih pelanggan, dan kapan mereka berinteraksi, per perangkat dan per lokasi.',
     capabilities: [
       'Jumlah tap dan scan per touchpoint',
       'Klik per tujuan dan performa link',
@@ -285,7 +285,7 @@ export const id: LandingContent = {
     highlight: 'Sebuah platform touchpoint.',
     benefits: [
       { icon: 'hand', title: 'Sederhana', description: 'Tap atau scan. Tanpa aplikasi, tanpa mengetik, tanpa mencari.' },
-      { icon: 'route', title: 'Fleksibel', description: 'Satu touchpoint, banyak tujuan — bisa diubah kapan saja.' },
+      { icon: 'route', title: 'Fleksibel', description: 'Satu touchpoint, banyak tujuan, bisa diubah kapan saja.' },
       { icon: 'chart-line', title: 'Terukur', description: 'Lihat apa yang benar-benar dilakukan pelanggan setelah setiap tap.' },
       { icon: 'layers', title: 'Skalabel', description: 'Tumbuh dari satu meja ke banyak lokasi dan perangkat.' },
     ],
@@ -358,7 +358,7 @@ export const id: LandingContent = {
     signin: {
       eyebrow: 'Dashboard',
       title: 'Login dibuka saat peluncuran.',
-      body: 'Dashboard Synctappy — perangkat, tujuan, campaign, dan analytics — tersedia bersamaan dengan uji coba gratis.',
+      body: 'Dashboard Synctappy (perangkat, tujuan, campaign, dan analytics) tersedia bersamaan dengan uji coba gratis.',
     },
     contact: {
       eyebrow: 'Hubungi Synvora',

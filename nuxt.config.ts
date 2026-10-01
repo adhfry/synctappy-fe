@@ -1,7 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://synctappy.biz.id'
-const title = 'Synctappy — Smart Touchpoint Platform'
+const title = 'Synctappy | Smart Touchpoint Platform'
 const description = 'Turn every tap and scan into a digital experience with Synctappy.'
 
 export default defineNuxtConfig({

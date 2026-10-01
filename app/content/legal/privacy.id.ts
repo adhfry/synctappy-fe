@@ -203,7 +203,7 @@ export const privacyId: LegalDocument = {
       id: 'hak-pengguna',
       title: '19. Hak Pengguna',
       blocks: [
-        { type: 'p', text: 'Sesuai ketentuan hukum yang berlaku (antara lain Pasal 5–15 UU PDP), Anda dapat memiliki hak untuk:' },
+        { type: 'p', text: 'Sesuai ketentuan hukum yang berlaku (antara lain Pasal 5 sampai 15 UU PDP), Anda dapat memiliki hak untuk:' },
         { type: 'ul', items: ['memperoleh informasi mengenai pemrosesan Data Pribadi;', 'mengakses dan memperoleh salinan Data Pribadi;', 'memperbaiki dan memperbarui Data Pribadi;', 'meminta penghapusan atau pemusnahan Data Pribadi;', 'menarik persetujuan;', 'meminta pembatasan pemrosesan;', 'mengajukan keberatan terhadap pemrosesan tertentu;', 'serta menggunakan hak lain yang diberikan berdasarkan peraturan perundang-undangan.'] },
       ],
     },
@@ -212,7 +212,7 @@ export const privacyId: LegalDocument = {
       title: '20. Cara Mengajukan Permintaan',
       blocks: [
         { type: 'p', text: 'Untuk mengajukan permintaan terkait Data Pribadi, hubungi privacy@synctappy.biz.id dengan subjek email:' },
-        { type: 'quote', text: 'Permintaan Data Pribadi – Synctappy' },
+        { type: 'quote', text: 'Permintaan Data Pribadi - Synctappy' },
         { type: 'p', text: 'Permintaan dapat mencakup akses data, koreksi, penghapusan, penarikan persetujuan, pembatasan pemrosesan, atau pertanyaan mengenai pemrosesan Data Pribadi. Kami dapat meminta informasi tambahan untuk memverifikasi identitas pemohon sebelum memenuhi permintaan, agar Data Pribadi tidak diberikan kepada pihak yang tidak berwenang.' },
       ],
     },

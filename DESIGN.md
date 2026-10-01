@@ -120,6 +120,8 @@ Real photography is used only where it exists: the **hero** (`hero-banner`, prio
 
 ## 8. Content & honesty rules (non-negotiable)
 
+* **No em dashes (—) or en dashes (–) in visible copy** (product owner's rule: they read as AI-generated text). Use commas, periods, colons or parentheses instead; page titles use `|` as separator ("Synctappy | Smart Touchpoint Platform"). Check with `grep -rn "—\|–" app` before committing (code comments are fine).
+
 * **Pricing:** plans come from blueprint §10, but the prices there are a pilot hypothesis. Show "Free" (14-day trial) and "Coming soon" only. Device limits (1/3/10/30) are shown.
 * **Analytics numbers** are sample data. Always keep the "Sample data" badge and the figcaption.
 * **Google Review compliance** (blueprint §17): no pre-filled 5 stars in review UIs, no "only show Google if 5★", no incentives, no promised review counts. Safe CTA copy: *"Share your experience on Google"*.

@@ -1,7 +1,7 @@
 {
   "name": "Synctappy by Synvora",
   "short_name": "Synctappy",
-  "description": "Smart touchpoint platform — turn every NFC tap and QR scan into a digital experience.",
+  "description": "Smart touchpoint platform that turns every NFC tap and QR scan into a digital experience.",
   "start_url": "/",
   "scope": "/",
   "display": "browser",

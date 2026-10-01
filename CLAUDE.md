@@ -64,9 +64,10 @@ Environment: Windows 11, Git Bash + PowerShell. Chrome is at `C:/Program Files/G
 2. Don't show final prices, real-looking customer stats, testimonials or client logos until real ones exist.
 3. Google Review: no pre-selected stars, no rating gating, no incentives, no promised results.
 4. Sample data must stay visibly labelled as sample/demo.
-5. Brand name is **Synctappy** (not "Syncappy"/"SyncTap") with "by SYNVORA".
-6. **Logo: only use the official files in `public/brand/`.** Never redraw, regenerate, recolor or "clean up" the logo.
-7. **Supplied images are used as-is.** `tap-connect-grow.png` is a transparent PNG served directly. Converting it without alpha (e.g. `convert('RGB')`) caused the "white shadow" bug. Don't edit pixels or add blend/mask effects.
+5. **No em dashes (—) / en dashes (–) in any visible copy, titles, meta or share images.** Rewrite with commas, periods, colons or parentheses; title separator is `|`.
+6. Brand name is **Synctappy** (not "Syncappy"/"SyncTap") with "by SYNVORA".
+7. **Logo: only use the official files in `public/brand/`.** Never redraw, regenerate, recolor or "clean up" the logo.
+8. **Supplied images are used as-is.** `tap-connect-grow.png` is a transparent PNG served directly. Converting it without alpha (e.g. `convert('RGB')`) caused the "white shadow" bug. Don't edit pixels or add blend/mask effects.
 
 ## Verification before finishing any change
 

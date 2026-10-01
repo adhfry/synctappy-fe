@@ -33,14 +33,14 @@ const copy = {
     eyebrow: 'Smart Touchpoint Platform',
     lead: 'Turn Every Touch Into a',
     highlight: 'Digital Experience.',
-    sub: 'Reviews, links, profiles & promos — with one tap or scan.',
+    sub: 'Reviews, links, profiles & promos with one tap or scan.',
     chips: ['NFC + QR', 'Multi-Link', 'Analytics'],
   },
   id: {
     eyebrow: 'Platform Smart Touchpoint',
     lead: 'Ubah Setiap Sentuhan Menjadi',
     highlight: 'Pengalaman Digital.',
-    sub: 'Review, link, profil & promo — cukup satu tap atau scan.',
+    sub: 'Review, link, profil & promo, cukup satu tap atau scan.',
     chips: ['NFC + QR', 'Multi-Link', 'Analytics'],
   },
 }

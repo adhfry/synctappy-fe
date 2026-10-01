@@ -203,7 +203,7 @@ export const privacyEn: LegalDocument = {
       id: 'hak-pengguna',
       title: '19. Your Rights',
       blocks: [
-        { type: 'p', text: 'Subject to applicable law (including Articles 5–15 of the PDP Law), you may have the right to:' },
+        { type: 'p', text: 'Subject to applicable law (including Articles 5 to 15 of the PDP Law), you may have the right to:' },
         { type: 'ul', items: ['obtain information about the processing of your Personal Data;', 'access and obtain a copy of your Personal Data;', 'correct and update your Personal Data;', 'request deletion or destruction of your Personal Data;', 'withdraw consent;', 'request restriction of processing;', 'object to certain processing;', 'and exercise other rights granted by laws and regulations.'] },
       ],
     },
@@ -212,7 +212,7 @@ export const privacyEn: LegalDocument = {
       title: '20. How to Submit a Request',
       blocks: [
         { type: 'p', text: 'To submit a request about your Personal Data, contact privacy@synctappy.biz.id with the email subject:' },
-        { type: 'quote', text: 'Personal Data Request – Synctappy' },
+        { type: 'quote', text: 'Personal Data Request - Synctappy' },
         { type: 'p', text: 'Requests may cover data access, correction, deletion, withdrawal of consent, restriction of processing, or questions about how your Personal Data is processed. We may ask for additional information to verify the requester’s identity before fulfilling a request, so that Personal Data is not disclosed to unauthorized parties.' },
       ],
     },
