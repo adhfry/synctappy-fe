@@ -1,0 +1,11 @@
+{
+  // Tailwind v4 is configured in CSS (no tailwind.config.js).
+  // Point IntelliSense at the entry stylesheet.
+  "tailwindCSS.experimental.configFile": "app/assets/css/main.css",
+  "tailwindCSS.classAttributes": ["class", ":class"],
+  // Treat .css as Tailwind so @theme / @apply / @layer aren't flagged as unknown at-rules
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "css.lint.unknownAtRules": "ignore"
+}

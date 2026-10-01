@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+@import './fonts.css'; /* self-hosted, see scripts/fetch-fonts.mjs */
+
+/* ------------------------------------------------------------------
+   Synctappy design tokens — see DESIGN.md for rationale
+------------------------------------------------------------------- */
+@theme {
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Ink (text / dark surfaces) */
+  --color-ink-950: #070b24;
+  --color-ink-900: #0d1440;
+  --color-ink-800: #18214f;
+  --color-ink-600: #3d4670;
+  --color-ink-500: #5a6389;
+  --color-ink-400: #8088a8;
+
+  /* Surfaces */
+  --color-mist-50: #f7f9ff;
+  --color-mist-100: #eef3ff;
+  --color-mist-200: #e1e8fb;
+  --color-line: #e3e8f6;
+
+  /* Brand */
+  --color-brand-700: #1a3fd6;
+  --color-brand-600: #2356f5;
+  --color-brand-500: #3b6cff;
+  --color-brand-100: #e4ebff;
+  --color-cyan-400: #2bc4f2;
+  --color-violet-500: #7b5cff;
+  --color-violet-600: #6a45f0;
+  --color-violet-100: #efeaff;
+
+  /* Google association (Google Review feature only) */
+  --color-g-blue: #4285f4;
+  --color-g-red: #ea4335;
+  --color-g-yellow: #fbbc05;
+  --color-g-green: #34a853;
+
+  --radius-card: 1.25rem;
+  --radius-panel: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgb(13 20 64 / 0.04), 0 12px 32px -12px rgb(13 20 64 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(13 20 64 / 0.04), 0 24px 56px -20px rgb(35 86 245 / 0.28);
+  --shadow-device: 0 40px 80px -30px rgb(13 20 64 / 0.45), 0 12px 24px -12px rgb(13 20 64 / 0.25);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+  --animate-dash-flow: dash-flow 0.9s linear infinite;
+
+  @keyframes dash-flow {
+    to { background-position: 16px 0; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -10px, 0); }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-mist-50 font-sans text-ink-600 antialiased;
+    overflow-x: clip;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink-900;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection { background: var(--color-brand-100); color: var(--color-ink-900); }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8;
+  }
+  .section-y {
+    @apply py-20 md:py-28;
+  }
+  .text-gradient {
+    background: linear-gradient(95deg, var(--color-brand-600) 0%, #4a5dff 45%, var(--color-violet-500) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-brand-gradient {
+    background: linear-gradient(100deg, var(--color-brand-600) 0%, #4a5bff 55%, var(--color-violet-500) 100%);
+  }
+  .card {
+    @apply rounded-[var(--radius-card)] border border-line bg-white shadow-[var(--shadow-soft)];
+  }
+  /* Gradient hairline border for highlighted surfaces */
+  .ring-gradient {
+    position: relative;
+    isolation: isolate;
+  }
+  .ring-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgb(59 108 255 / 0.55), rgb(43 196 242 / 0.25) 40%, rgb(123 92 255 / 0.55));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* Above-the-fold entrance (pure CSS so it never waits for hydration) */
+@keyframes hero-in {
+  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in {
+  animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal (driven by the v-reveal directive)
+   Content is only hidden once JS has marked the document ready,
+   so nothing disappears if JS fails.
+------------------------------------------------------------------- */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(0.985);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-ready [data-reveal='fade'] { transform: none; }
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-ready [data-reveal] { opacity: 1; transform: none; }
+}
