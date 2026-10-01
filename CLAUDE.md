@@ -1,6 +1,6 @@
 # CLAUDE.md: Synctappy landing page
 
-Guidance for AI agents continuing this project. Read **README.md** (setup and structure) and **DESIGN.md** (design system and honesty rules) before changing anything.
+Guidance for AI agents continuing this project. Read **README.md** (setup and structure), **DESIGN.md** (design system and honesty rules) and **DEPLOYMENT.md** (GitHub, VPS, DNS, how to deploy) before changing anything.
 
 ## What this is
 
@@ -19,7 +19,8 @@ Marketing landing page for **Synctappy by Synvora**, a smart touchpoint platform
 - QA: `nuxt typecheck` clean, production build OK, console clean, no horizontal overflow or broken images at 1440/1280/1024/768/640/390/375. Two visual refinement passes done.
 
 **Known / open items:**
-- `NUXT_PUBLIC_SITE_URL` defaults to the placeholder `https://synctappy.id`. Confirm the real domain.
+- Production is live at **https://synctappy.biz.id** (VPS, PM2 `synctappy-fe`, see DEPLOYMENT.md). Deploy = `git push` then `ssh produli-server 'sudo bash /var/www/synctappy.biz.id/scripts/deploy.sh'`. The GitHub repo is PUBLIC: never commit secrets or internal docs.
+- UI mockups still show the demo short link `go.synctappy.id`; the real short-link host will be `go.synctappy.biz.id` (DNS reserved). Privacy Policy emails `@synctappy.id` are still placeholders.
 - `NUXT_PUBLIC_CONTACT_HREF` is empty, so the "Talk to Synvora" button inside the dialog stays hidden. Needs an official contact channel.
 - Final pricing is not validated. Keep "Coming soon" until the business confirms numbers.
 - Privacy Policy is a **DRAFT pending legal review**: effective date, company address and the `@synctappy.id` emails are placeholders (shown as text, not links). Finalize together with the real third parties, retention periods and controller/processor model.
