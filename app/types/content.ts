@@ -108,7 +108,15 @@ export interface CtaCopy {
 }
 
 export interface LandingContent {
-  meta: { title: string, description: string, ogLocale: string }
+  meta: {
+    title: string
+    description: string
+    ogLocale: string
+    /** Alt text of the social share image (og-<locale>.jpg) */
+    imageAlt: string
+    /** Feature list for structured data (SoftwareApplication.featureList) */
+    features: string[]
+  }
   common: { startTrial: string, talkToSynvora: string, signIn: string, skipToContent: string }
   language: { label: string, names: Record<Locale, string> }
   nav: { links: NavLink[], main: string, backToTop: string, openMenu: string, closeMenu: string }
@@ -213,7 +221,7 @@ export interface LandingContent {
     notUsed: string
     categories: { essential: CookieCategory, preferences: CookieCategory, analytics: CookieCategory, marketing: CookieCategory }
   }
-  legal: { backHome: string, onThisPage: string }
+  legal: { backHome: string, onThisPage: string, home: string, privacyDescription: string }
 }
 
 export interface CookieCategory {

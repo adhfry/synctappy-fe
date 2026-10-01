@@ -1,21 +1,27 @@
 <script setup lang="ts">
 const { public: { siteUrl } } = useRuntimeConfig()
 const { t, locale } = useLocale()
+const base = siteUrl.replace(/\/$/, '')
 
-useHead({
-  script: [{
-    type: 'application/ld+json',
-    innerHTML: () => JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      'name': 'Synctappy',
-      'applicationCategory': 'BusinessApplication',
-      'operatingSystem': 'Web',
-      'inLanguage': locale.value,
-      'description': t.value.meta.description,
-      'url': siteUrl,
-      'publisher': { '@type': 'Organization', 'name': 'Synvora' },
-    }),
+usePageSeo({
+  path: '/',
+  title: () => t.value.meta.title,
+  description: () => t.value.meta.description,
+  schema: () => [{
+    '@type': 'SoftwareApplication',
+    '@id': `${base}/#software`,
+    'name': 'Synctappy',
+    'alternateName': 'Synctappy by Synvora',
+    'url': `${base}/`,
+    'description': t.value.meta.description,
+    'applicationCategory': 'BusinessApplication',
+    'applicationSubCategory': 'Customer engagement / NFC & QR touchpoint platform',
+    'operatingSystem': 'Web',
+    'inLanguage': locale.value,
+    'image': `${base}/images/synctappy/og-${locale.value}.jpg`,
+    'featureList': t.value.meta.features,
+    'publisher': { '@id': `${base}/#organization` },
+    'brand': { '@id': `${base}/#organization` },
   }],
 })
 </script>

@@ -84,6 +84,19 @@ Reference material (kept untouched in the root): `Gambaran_Landing_Synctappy.png
 
 The page is bilingual. The default follows the visitor's device language (Indonesian → ID, otherwise EN), detected on the server from `Accept-Language` and on the client from `navigator.languages`. Visitors can switch with the flag menu in the navbar; their choice is stored in the `synctappy_lang` cookie for a year. All copy lives in `app/content/en.ts` and `app/content/id.ts`, which share the `LandingContent` type.
 
+## SEO
+
+| | |
+|---|---|
+| Per page | `usePageSeo()` → title, description, canonical, og:url, hreflang, OG/Twitter (localized image + alt), JSON-LD `@graph` |
+| Language URLs | `/` auto-detects; `/?lang=en` and `/?lang=id` are the indexable language versions (hreflang + sitemap) |
+| Share images | `public/images/synctappy/og-en.jpg`, `og-id.jpg` (1200×630) rendered from official assets by `npm run og` |
+| Crawling | `/robots.txt`, `/sitemap.xml` (Nitro routes in `server/routes/`), `/site.webmanifest` |
+| Headers | HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy, cache-control for fonts/images (`routeRules`) |
+| Check | `npm run seo:audit -- https://synctappy.biz.id` |
+
+After going live, submit `https://synctappy.biz.id/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+
 ## Cookies & privacy
 
 The site sets only two cookies: `synctappy_consent` (essential, stores the visitor's choice) and `synctappy_lang` (preference, stored only with consent). The consent card is deliberately small and non-blocking. The Privacy Policy at `/privacy` is a **draft pending legal review**.

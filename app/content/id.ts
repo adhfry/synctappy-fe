@@ -9,8 +9,17 @@ import type { LandingContent } from '~/types/content'
 export const id: LandingContent = {
   meta: {
     title: 'Synctappy — Platform Smart Touchpoint',
-    description: 'Ubah setiap tap dan scan menjadi pengalaman digital bersama Synctappy.',
+    description: 'Synctappy mengubah setiap tap NFC dan scan QR menjadi pengalaman digital — Google Review, profil multi-link, dynamic link, campaign, dan analytics.',
     ogLocale: 'id_ID',
+    imageAlt: 'Synctappy by Synvora — stand akrilik NFC/QR KopiKu di samping ponsel yang menampilkan smart profile, dengan judul “Ubah Setiap Sentuhan Menjadi Pengalaman Digital.”',
+    features: [
+      'Touchpoint NFC dan QR (stand, kartu, tag)',
+      'Pintasan Google Review',
+      'Smart profile multi-link',
+      'Dynamic link — ganti tujuan tanpa cetak ulang',
+      'Campaign dan promo',
+      'Analytics tap, scan, dan klik per touchpoint',
+    ],
   },
   common: { startTrial: 'Coba Gratis', talkToSynvora: 'Hubungi Synvora', signIn: 'Masuk', skipToContent: 'Lewati ke konten' },
   language: { label: 'Bahasa', names: { en: 'English', id: 'Bahasa Indonesia' } },
@@ -378,5 +387,10 @@ export const id: LandingContent = {
       marketing: { title: 'Marketing', description: 'Iklan dan pelacakan. Kami tidak memakai cookie marketing.' },
     },
   },
-  legal: { backHome: 'Kembali ke beranda', onThisPage: 'Di halaman ini' },
+  legal: {
+    backHome: 'Kembali ke beranda',
+    onThisPage: 'Di halaman ini',
+    home: 'Beranda',
+    privacyDescription: 'Bagaimana Synctappy by Synvora mengumpulkan, menggunakan, dan melindungi Data Pribadi sesuai UU Pelindungan Data Pribadi (UU PDP No. 27/2022).',
+  },
 }

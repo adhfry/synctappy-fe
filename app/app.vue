@@ -11,15 +11,30 @@ useHead({
   }],
 })
 
-// Localized SEO (defaults in nuxt.config.ts are the English fallback)
+// Site-wide head tags. Page-specific SEO (title, description, canonical,
+// hreflang, Open Graph, Twitter, JSON-LD) lives in usePageSeo() per page.
 useSeoMeta({
-  title: () => t.value.meta.title,
-  description: () => t.value.meta.description,
-  ogTitle: () => t.value.meta.title,
-  ogDescription: () => t.value.meta.description,
-  ogLocale: () => t.value.meta.ogLocale,
-  twitterTitle: () => t.value.meta.title,
-  twitterDescription: () => t.value.meta.description,
+  applicationName: 'Synctappy',
+  appleMobileWebAppTitle: 'Synctappy',
+  author: 'Synvora Teknologi Indonesia',
+  creator: 'Synvora Teknologi Indonesia',
+  publisher: 'Synvora Teknologi Indonesia',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  themeColor: '#ffffff',
+  colorScheme: 'light',
+  formatDetection: 'telephone=no',
+  referrer: 'strict-origin-when-cross-origin',
+  ogSiteName: 'Synctappy by Synvora',
+})
+
+useHead({
+  link: [
+    { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/favicon-192.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+    { rel: 'manifest', href: '/site.webmanifest' },
+  ],
 })
 </script>
 

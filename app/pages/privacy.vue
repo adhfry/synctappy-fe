@@ -2,15 +2,14 @@
 import { privacyEn } from '~/content/legal/privacy.en'
 import { privacyId } from '~/content/legal/privacy.id'
 
-const { locale } = useLocale()
+const { locale, t } = useLocale()
 const doc = computed(() => (locale.value === 'id' ? privacyId : privacyEn))
 
-useSeoMeta({
+usePageSeo({
+  path: '/privacy',
   title: () => `${doc.value.title} — Synctappy`,
-  description: () => (locale.value === 'id'
-    ? 'Bagaimana Synctappy by Synvora mengumpulkan, menggunakan, dan melindungi Data Pribadi sesuai UU PDP.'
-    : 'How Synctappy by Synvora collects, uses and protects Personal Data under Indonesia’s PDP Law.'),
-  ogTitle: () => `${doc.value.title} — Synctappy`,
+  description: () => t.value.legal.privacyDescription,
+  breadcrumb: () => [{ name: doc.value.title, path: '/privacy' }],
 })
 </script>
 

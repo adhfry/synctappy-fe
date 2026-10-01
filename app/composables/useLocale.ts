@@ -18,18 +18,24 @@ export function detectLocale(preferences: string | readonly string[] | undefined
   return primary === 'id' || primary === 'in' ? 'id' : 'en'
 }
 
-const isLocale = (v: unknown): v is Locale => v === 'en' || v === 'id'
+export const isLocale = (v: unknown): v is Locale => v === 'en' || v === 'id'
 
 /**
- * Current locale + its content.
- *  1. explicit user choice (cookie) wins,
- *  2. otherwise the device's primary language (server: Accept-Language,
- *     client fallback in plugins/locale.client.ts: navigator.languages).
+ * Current locale + its content. Priority:
+ *  1. `?lang=en|id` in the URL — gives each language its own indexable URL
+ *     (used by hreflang/sitemap; see usePageSeo),
+ *  2. explicit user choice (cookie),
+ *  3. the device's primary language (server: Accept-Language, client
+ *     fallback in plugins/locale.client.ts: navigator.languages).
  */
 export function useLocale() {
   const cookie = useCookie<Locale | null>(LOCALE_COOKIE, { maxAge: 60 * 60 * 24 * 365, sameSite: 'lax', default: () => null })
 
+  const route = useRoute()
+  const queryLocale = computed(() => (isLocale(route.query.lang) ? route.query.lang : null))
+
   const locale = useState<Locale>('locale', () => {
+    if (queryLocale.value) return queryLocale.value
     if (isLocale(cookie.value)) return cookie.value
     if (import.meta.server) return detectLocale(useRequestHeaders(['accept-language'])['accept-language'])
     return detectLocale(navigator.languages)
@@ -46,6 +52,11 @@ export function useLocale() {
     locale.value = value
     manual.value = true
     if (useConsent().allowPreferences.value) cookie.value = value
+    // Drop a ?lang= override so the URL matches what the visitor now sees
+    if (queryLocale.value && queryLocale.value !== value) {
+      const { lang: _lang, ...query } = route.query
+      navigateTo({ path: route.path, query, hash: route.hash }, { replace: true })
+    }
   }
 
   const t = computed(() => contents[locale.value])
@@ -54,6 +65,6 @@ export function useLocale() {
     locale,
     setLocale,
     t,
-    hasExplicitChoice: computed(() => manual.value || isLocale(cookie.value)),
+    hasExplicitChoice: computed(() => manual.value || !!queryLocale.value || isLocale(cookie.value)),
   }
 }

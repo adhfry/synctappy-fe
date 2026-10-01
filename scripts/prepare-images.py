@@ -1,6 +1,6 @@
 """
 Copies the original Synctappy assets into public/images/synctappy and
-generates optimized responsive WebP variants + an Open Graph JPG.
+generates optimized responsive WebP variants.
 
 Run from project root:  python scripts/prepare-images.py
 Requires Pillow (pip install pillow). Originals are never modified.
@@ -29,13 +29,5 @@ for src_name, (slug, widths) in ASSETS.items():
         im.resize((w, h), Image.LANCZOS).save(OUT / f"{slug}-{w}.webp", "WEBP", quality=82, method=6)
     print(slug, im.size)
 
-# Open Graph image (1200x630) from the hero banner
-hero = Image.open(ROOT / "hero_banner_synctappy.png").convert("RGB")
-target_ratio = 1200 / 630
-w, h = hero.size
-new_h = round(w / target_ratio)
-top = max(0, (h - new_h) // 2)
-hero.crop((0, top, w, top + new_h)).resize((1200, 630), Image.LANCZOS).save(
-    OUT / "og-image.jpg", "JPEG", quality=85, optimize=True
-)
+# Open Graph images are rendered by scripts/render-og.mjs (og-en.jpg / og-id.jpg)
 print("done")

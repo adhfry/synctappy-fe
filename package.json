@@ -9,7 +9,9 @@
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck",
     "images": "python scripts/prepare-images.py",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "og": "node scripts/render-og.mjs && python -c \"from PIL import Image;import os;[ (Image.open(f'public/images/synctappy/og-{l}.png').convert('RGB').save(f'public/images/synctappy/og-{l}.jpg','JPEG',quality=86,optimize=True,progressive=True),os.remove(f'public/images/synctappy/og-{l}.png')) for l in ('en','id')]\"",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "dependencies": {
     "lucide-vue-next": "^1.0.0",
