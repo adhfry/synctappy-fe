@@ -33,41 +33,45 @@ const { t } = useLocale()
       <div v-reveal="120" class="relative mx-auto w-full max-w-[520px]">
         <UiGlowOrb tone="blue" class="inset-0 scale-125 opacity-70" />
         <div class="relative grid grid-cols-[0.8fr_1fr] items-end gap-4 sm:gap-6">
-          <div class="pb-10">
+          <div class="pb-8 sm:pb-10">
             <MockupsStandMockup />
-            <div class="mt-5 flex items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-bold text-ink-800 shadow-[var(--shadow-soft)]">
-              <UiIcon name="nfc" class="size-4 text-brand-600" />
+            <div class="mx-auto mt-4 flex w-fit items-center justify-center gap-1.5 rounded-full bg-white px-2.5 py-1.5 text-[10px] font-semibold text-ink-800 shadow-[var(--shadow-soft)] sm:mt-5 sm:text-[11px]">
+              <UiIcon name="nfc" class="size-3 text-brand-600 sm:size-3.5" />
               {{ t.review.tapScan }}
               <span class="text-ink-400">→</span>
-              <UiBrandIcon name="google" class="size-4" />
+              <UiBrandIcon name="google" class="size-3 sm:size-3.5" />
             </div>
           </div>
 
           <UiDeviceMockup :label="t.review.phoneLabel">
-            <div class="absolute inset-0 flex flex-col bg-white px-4 pt-12">
-              <div class="flex items-center gap-2">
-                <UiBrandIcon name="google" class="size-6" />
-                <span class="text-[11px] font-semibold text-ink-500">{{ t.review.googleReviews }}</span>
+            <!-- Screen content scales with the phone width (cqw) so it never crowds -->
+            <div class="@container absolute inset-0">
+            <div class="flex h-full flex-col bg-white px-[7cqw] pb-[7cqw] pt-[17cqw]">
+              <div class="flex items-center gap-[2.5cqw]">
+                <UiBrandIcon name="google" class="size-[8cqw]" />
+                <span class="text-[4.6cqw] font-semibold text-ink-500">{{ t.review.googleReviews }}</span>
               </div>
-              <div class="mt-5 flex items-center gap-3">
-                <span class="grid size-11 place-items-center rounded-full bg-[#2b1c14] font-display font-bold text-amber-100">K</span>
-                <div>
-                  <p class="text-sm font-bold text-ink-900">KopiKu Coffee & Eatery</p>
-                  <p class="text-[10px] text-ink-400">{{ t.review.postingPublicly }}</p>
+              <div class="mt-[6cqw] flex items-center gap-[3.5cqw]">
+                <span class="grid size-[14cqw] shrink-0 place-items-center rounded-full bg-[#2b1c14] font-display text-[5.5cqw] font-bold text-amber-100">K</span>
+                <div class="min-w-0">
+                  <p class="truncate text-[5.2cqw] font-bold leading-tight text-ink-900">KopiKu Coffee & Eatery</p>
+                  <p class="truncate text-[3.8cqw] leading-tight text-ink-400">{{ t.review.postingPublicly }}</p>
                 </div>
               </div>
-              <div class="mt-6 flex justify-center gap-1.5" aria-hidden="true">
-                <svg v-for="n in 5" :key="n" viewBox="0 0 24 24" class="size-7 fill-none stroke-ink-400" stroke-width="1.6" stroke-linejoin="round">
+              <div class="mt-[7cqw] flex justify-center gap-[2.5cqw]" aria-hidden="true">
+                <svg v-for="n in 5" :key="n" viewBox="0 0 24 24" class="size-[10cqw] fill-none stroke-ink-400" stroke-width="1.6" stroke-linejoin="round">
                   <path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" />
                 </svg>
               </div>
-              <div class="mt-5 h-24 rounded-xl border border-line bg-mist-50 p-3 text-[10px] text-ink-400">
+              <!-- review box grows to fill the screen, like the real Google sheet -->
+              <div class="mt-[7cqw] min-h-[30cqw] flex-1 rounded-[4cqw] border border-line bg-mist-50 p-[4cqw] text-[3.9cqw] leading-snug text-ink-400">
                 {{ t.review.placeholder }}
               </div>
-              <span class="mt-4 self-end rounded-full bg-g-blue px-5 py-2 text-[11px] font-semibold text-white">{{ t.review.post }}</span>
-              <div class="mt-auto mb-5 flex h-1 overflow-hidden rounded-full" aria-hidden="true">
+              <span class="mt-[5cqw] self-end rounded-full bg-g-blue px-[6cqw] py-[2.4cqw] text-[4.2cqw] font-semibold text-white">{{ t.review.post }}</span>
+              <div class="mt-[6cqw] flex h-[1.2cqw] min-h-[3px] overflow-hidden rounded-full" aria-hidden="true">
                 <span class="flex-1 bg-g-blue" /><span class="flex-1 bg-g-red" /><span class="flex-1 bg-g-yellow" /><span class="flex-1 bg-g-green" />
               </div>
+            </div>
             </div>
           </UiDeviceMockup>
         </div>
