@@ -58,24 +58,24 @@ const categories = computed(() => {
       v-if="visible"
       role="region"
       :aria-label="t.cookies.title"
-      class="ring-gradient fixed inset-x-3 bottom-3 z-[55] rounded-[1.5rem] bg-white/97 p-5 shadow-[0_30px_70px_-20px_rgb(13_20_64/0.45)] backdrop-blur-xl sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[460px] sm:p-6"
+      class="ring-gradient fixed inset-x-3 bottom-3 z-[55] max-h-[70dvh] overflow-y-auto rounded-2xl bg-white/97 p-3.5 shadow-[0_20px_50px_-20px_rgb(13_20_64/0.45)] backdrop-blur-xl sm:inset-x-auto sm:bottom-6 sm:right-6 sm:max-h-none sm:w-[460px] sm:overflow-visible sm:rounded-[1.5rem] sm:p-6 sm:shadow-[0_30px_70px_-20px_rgb(13_20_64/0.45)]"
     >
       <button
         type="button"
-        class="absolute right-4 top-4 z-10 grid size-9 place-items-center rounded-lg text-ink-400 hover:bg-mist-100 hover:text-ink-900"
+        class="absolute right-2 top-2 z-10 grid size-9 place-items-center sm:right-4 sm:top-4 rounded-lg text-ink-400 hover:bg-mist-100 hover:text-ink-900"
         :aria-label="t.modal.close"
         @click="close"
       >
         <X class="size-5" aria-hidden="true" />
       </button>
 
-      <div class="flex items-start gap-4 pr-9">
-        <span class="grid size-12 shrink-0 place-items-center rounded-2xl bg-brand-gradient text-white shadow-[0_10px_24px_-10px_rgb(35_86_245/0.7)]">
+      <div class="flex items-start gap-4 pr-8 sm:pr-9">
+        <span class="hidden size-12 shrink-0 place-items-center rounded-2xl bg-brand-gradient sm:grid text-white shadow-[0_10px_24px_-10px_rgb(35_86_245/0.7)]">
           <Cookie class="size-6" aria-hidden="true" />
         </span>
         <div>
-          <p class="font-display text-lg font-bold leading-tight text-ink-900">{{ t.cookies.title }}</p>
-          <p class="mt-1.5 text-sm leading-relaxed text-ink-500">
+          <p class="font-display text-[0.95rem] font-bold leading-tight text-ink-900 sm:text-lg">{{ t.cookies.title }}</p>
+          <p class="mt-1 text-[0.8rem] leading-snug text-ink-500 sm:mt-1.5 sm:text-sm sm:leading-relaxed">
             {{ t.cookies.body }}
             <NuxtLink to="/privacy#cookies" class="font-semibold text-brand-600 underline-offset-2 hover:underline">{{ t.cookies.policyLink }}</NuxtLink>
           </p>
@@ -83,7 +83,7 @@ const categories = computed(() => {
       </div>
 
       <!-- category settings -->
-      <ul v-if="settings" class="mt-5 space-y-3 border-t border-line pt-5">
+      <ul v-if="settings" class="mt-3 space-y-2.5 border-t border-line pt-3 sm:mt-5 sm:space-y-3 sm:pt-5">
         <li v-for="c in categories" :key="c.key" class="flex items-start justify-between gap-3">
           <div class="min-w-0">
             <p class="text-sm font-bold text-ink-900">{{ c.title }}</p>
@@ -106,14 +106,14 @@ const categories = computed(() => {
         </li>
       </ul>
 
-      <div class="mt-5 flex flex-wrap items-center gap-2.5">
+      <div class="mt-3 flex flex-wrap items-center gap-2 sm:mt-5 sm:gap-2.5">
         <template v-if="settings">
-          <UiButton class="flex-1" @click="save(prefsToggle); settings = false">{{ t.cookies.save }}</UiButton>
+          <UiButton class="h-10! flex-1 text-sm! sm:h-12! sm:text-[0.95rem]!" @click="save(prefsToggle); settings = false">{{ t.cookies.save }}</UiButton>
         </template>
         <template v-else>
-          <UiButton class="flex-1" @click="acceptAll">{{ t.cookies.acceptAll }}</UiButton>
-          <UiButton variant="secondary" class="flex-1" @click="essentialOnly">{{ t.cookies.accept }}</UiButton>
-          <button type="button" class="w-full pt-1 text-center text-sm font-semibold text-ink-500 underline-offset-2 hover:text-ink-900 hover:underline sm:w-auto sm:px-2 sm:pt-0" @click="settings = true; prefsToggle = allowPreferences">
+          <UiButton class="h-10! flex-1 px-3! text-sm! sm:h-12! sm:px-5! sm:text-[0.95rem]!" @click="acceptAll">{{ t.cookies.acceptAll }}</UiButton>
+          <UiButton variant="secondary" class="h-10! flex-1 px-3! text-sm! sm:h-12! sm:px-5! sm:text-[0.95rem]!" @click="essentialOnly">{{ t.cookies.accept }}</UiButton>
+          <button type="button" class="w-full text-center text-[0.8rem] font-semibold text-ink-500 underline-offset-2 hover:text-ink-900 hover:underline sm:w-auto sm:px-2 sm:text-sm" @click="settings = true; prefsToggle = allowPreferences">
             {{ t.cookies.customize }}
           </button>
         </template>
