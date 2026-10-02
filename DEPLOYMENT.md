@@ -52,7 +52,30 @@ The VPS (`76.13.196.43`, alias `produli-server`) runs many large production syst
 | SSL | Let's Encrypt via Certbot (`--nginx`), auto-renew by the system certbot timer |
 | URL | https://synctappy.biz.id (canonical). `https://www.synctappy.biz.id` → 301 to apex |
 
-### Update / redeploy
+### Update / redeploy (CI/CD)
+
+```
+git push origin main
+  └─ GitHub Actions "CI/CD" (.github/workflows/ci-cd.yml)
+       ├─ build:  npm ci → npm run typecheck → npm run build      (every push + PR)
+       └─ deploy: (main only, after build is green, environment `production`)
+            ssh (CI-only key, forced command) → /usr/local/bin/synctappy-deploy fe
+              └─ scripts/deploy.sh: pull both folders → npm ci → build → pm2 reload → health check
+            └─ smoke test: https://synctappy.biz.id/ = 200
+```
+
+- PRs only run the build job; they never deploy (and forks never see secrets).
+- The deploy job is **off** until the repo variable `DEPLOY_ENABLED=true` is set (Settings → Secrets and variables → Actions → Variables).
+- Repo secrets: `DEPLOY_HOST`, `DEPLOY_USER` (`ahda`), `DEPLOY_SSH_KEY` (private key `synctappy-ci`, used ONLY by CI),
+  `DEPLOY_KNOWN_HOSTS` (pinned VPS ED25519 host key line).
+- **CI key is locked down on the VPS:** `scripts/server/setup-ci-deploy.sh` installs `scripts/server/synctappy-deploy-gate.sh`
+  as `/usr/local/bin/synctappy-deploy` and adds the key to `/home/ahda/.ssh/authorized_keys` with
+  `command="/usr/local/bin/synctappy-deploy",restrict`. The key can only run `fe` or `api <ref>`: no shell, no port forwarding.
+  The same key/gate also deploys the API repo (see its DEPLOYMENT.md). Revoke by deleting that line.
+- One-time setup (VPS): copy `scripts/server/` to the server and run
+  `sudo bash setup-ci-deploy.sh "ssh-ed25519 AAAA... synctappy-ci"`.
+
+Manual alternative:
 
 ```bash
 git push origin main                                  # from the dev machine
@@ -80,9 +103,9 @@ All records are **A → 76.13.196.43** (set by the owner):
 | `synctappy.biz.id` | Landing page (this repo) | **live** |
 | `www` | → 301 to apex | **live** |
 | `app` | Customer SaaS dashboard | reserved |
-| `api` | Laravel API | reserved |
+| `api` | Laravel API (repo `synctappy-api`, docker stack on 127.0.0.1:3090) | **live** |
 | `admin` | Synvora admin console | reserved |
-| `go` | Dynamic link engine (`go.synctappy.biz.id/{workspace}/{slug}`) | reserved |
+| `go` | Dynamic link engine (served by the API stack) | **live** |
 | `docs` | Documentation | reserved |
 | `help` | Help center / support | reserved |
 | `status` | Status page | reserved |
@@ -92,5 +115,5 @@ When a reserved subdomain gets an app: new folder `/var/www/<host>`, new free `1
 ## Ports in use on the VPS (avoid)
 
 Public: 22, 80, 443, 2024, 3001, 3033, 3034, 3040, 3060, 3210, 4000, 9000, 9001.
-Local: 3050, 3070, 3306, 4001, 5050, 5080, 5678, 6379, 8010, 8080 (and others), **3080 = synctappy-fe**.
+Local: 3050, 3070, 3306, 4001, 5050, 5080, 5678, 6379, 8010, 8080 (and others), **3080 = synctappy-fe**, **3090 = synctappy API stack**.
 Check before picking a port: `sudo ss -ltn | grep :PORT`.

@@ -6,7 +6,7 @@ Guidance for AI agents continuing this project. Read **README.md** (setup and st
 
 Marketing landing page for **Synctappy by Synvora**, a smart touchpoint platform (NFC/QR hardware + SaaS). Nuxt 4 + Vue 3 + TypeScript + Tailwind v4. Frontend only: **no backend exists yet** (Laravel API planned).
 
-## Status checkpoint (2026-10-01)
+## Status checkpoint (2026-10-02)
 
 **Done (Phase 1):**
 - All 15 story sections in `app/pages/index.vue`: Hero → Problem → Solution → How It Works → Google Review → Multi-Link → Smart Profile → Dynamic Link → Analytics → Campaign → Hardware → Use Cases → Why → Pricing → Final CTA, plus Navbar, Footer and the CTA dialog.
@@ -30,7 +30,9 @@ Marketing landing page for **Synctappy by Synvora**, a smart touchpoint platform
 - 4 cosmetic PostCSS warnings at build ("Gradient has outdated direction syntax"). It's a prefixer false positive and harmless.
 - Google Fonts load from the CDN. Consider `@nuxt/fonts` for self-hosting.
 
-**Next phase (not started):** Laravel 11/12 API (Sanctum auth, workspaces, devices, dynamic link engine `go.synctappy.biz.id/{workspace}/{slug}`, analytics events, campaigns, billing). See blueprint §3–§22.
+**Backend:** the Laravel API lives in its own private repo `adhfry/synctappy-api` (`D:\Project_Web\Synctappy_Project\Synctappy-api`) and is LIVE at `https://api.synctappy.biz.id` / `https://go.synctappy.biz.id` (phases 0–3). See its CLAUDE.md.
+
+**CI/CD:** `.github/workflows/ci-cd.yml` runs typecheck + build on every push/PR and auto-deploys `main` via a forced-command SSH key (gate in `scripts/server/`). Deploy is off until repo variable `DEPLOY_ENABLED=true`. Details in DEPLOYMENT.md.
 Privacy requirements from the product owner for that phase: a **Privacy Center** in dashboard Settings (Privacy Policy, Cookie Preferences, Download My Data, Request Correction, Request Deletion, Withdraw Consent) and an onboarding consent checkbox ("I have read and agree to the Terms of Service and Privacy Policy") whose consent is **recorded** (UU PDP).
 
 ## Commands
