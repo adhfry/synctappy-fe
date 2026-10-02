@@ -22,6 +22,25 @@ SSH keys stay on the owner's machine (`~/.ssh`), never commit them.
 | Shared server | ⚠️ Hosts many other production sites (Synvora, Labkesda, Produli, Silakes…). Never touch other vhosts/PM2 apps; always run `nginx -t` before reload. |
 | Process manager | **root** PM2 (`/root/.pm2`), Node from `/root/.nvm/versions/node/v24.13.1/bin` (not on `sudo` PATH, so use the full path or `scripts/deploy.sh`) |
 
+## ⚠️ Shared VPS safety rules (mandatory)
+
+The VPS (`76.13.196.43`, alias `produli-server`) runs many large production systems 24/7
+(Labkesda, Produli, Silakes, Synvora, Agrivita, n8n, bots, MySQL/Redis shared services…).
+
+1. **Only touch what Synctappy created:** `/opt/synctappy/`, `/var/www/synctappy.biz.id`, `/var/www/www.synctappy.biz.id`,
+   nginx vhost `synctappy.biz.id` (+ future `api`/`go` vhosts), PM2 app `synctappy-fe`, docker compose project `synctappy`,
+   SSH alias `github-synctappy-api` + key `/root/.ssh/synctappy_api_deploy`.
+2. **Before changing or deleting any existing file, folder, service, container, vhost, database, cron or process:**
+   cross-check owner/purpose (`ls -la`, `stat`, `ss -ltnp`, `docker ps`, `pm2 ls`, nginx `server_name`) and **ask the owner first**
+   if it is not Synctappy's.
+3. **Never run global/destructive commands:** no `docker system/volume/image prune`, `docker compose down` outside
+   `/opt/synctappy/api`, `pm2 restart|stop|delete all`, `pm2 kill`, `systemctl restart nginx|mysql|redis`,
+   `rm -rf` outside Synctappy paths, shared MySQL/Redis changes, `apt upgrade`, firewall changes.
+4. **nginx:** always `sudo nginx -t` before `sudo systemctl reload nginx` (reload, never restart); if the test fails, remove only the new vhost.
+5. **Ports:** check `sudo ss -ltn | grep :PORT` before binding; Synctappy uses 3080 (FE) and 127.0.0.1:3090 (API stack).
+6. **After every server change:** verify other sites still answer (e.g. `curl -s -o /dev/null -w "%{http_code}"` on
+   synvorateknologiindonesia.web.id, produli.labkesdasumenep.id, silakes.labkesdasumenep.id).
+
 ## Synctappy FE on the server
 
 | | |

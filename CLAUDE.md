@@ -68,6 +68,7 @@ Environment: Windows 11, Git Bash + PowerShell. Chrome is at `C:/Program Files/G
 6. Brand name is **Synctappy** (not "Syncappy"/"SyncTap") with "by SYNVORA".
 7. **Logo: only use the official files in `public/brand/`.** Never redraw, regenerate, recolor or "clean up" the logo.
 8. **Supplied images are used as-is.** `tap-connect-grow.png` is a transparent PNG served directly. Converting it without alpha (e.g. `convert('RGB')`) caused the "white shadow" bug. Don't edit pixels or add blend/mask effects.
+9. **Shared VPS:** follow "Shared VPS safety rules" in DEPLOYMENT.md. Never modify/delete/restart anything on the VPS that Synctappy did not create without the owner's approval.
 
 ## Verification before finishing any change
 
